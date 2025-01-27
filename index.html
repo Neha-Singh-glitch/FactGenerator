@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+        }
+        .fact {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        .fact:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>10 Fun Facts About the Olympics</h1>
+    <div id="facts-container"></div>
+
+    <script>
+        const facts = [
+            "The first modern Olympic Games were held in Athens, Greece, in 1896.",
+            "The Olympic rings were created in 1913 and represent the five continents: Africa, the Americas, Asia, Europe, and Oceania.",
+            "The Olympic flame is lit months before the Games and is carried by runners to the host city.",
+            "The Olympics were originally a religious festival in honor of Zeus.",
+            "The first woman to compete in the Olympics was Hélène de Pourtalès in 1900.",
+            "The Olympic Games were held in ancient Greece every four years for nearly 12 centuries.",
+            "The most medals won by an athlete in a single Olympic Games is 8, achieved by Michael Phelps in 2008.",
+            "The 2020 Tokyo Olympics were postponed to 2021 due to the COVID-19 pandemic.",
+            "The Olympic motto is 'Citius, Altius, Fortius,' which means 'Faster, Higher, Stronger.'",
+            "The host city for the Olympics is chosen seven years in advance."
+        ];
+
+        const factsContainer = document.getElementById('facts-container');
+
+        facts.forEach(fact => {
+            const factDiv = document.createElement('div');
+            factDiv.className = 'fact';
+            factDiv.textContent = fact;
+            factsContainer.appendChild(factDiv);
+        });
+    </script>
+
+</body>
+</html>
