@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympic Fun Facts</title>
+    <title>Olympic Fun Facts Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,12 +26,23 @@
         .fact:hover {
             transform: scale(1.05);
         }
+        #fact-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>10 Fun Facts About the Olympics</h1>
-    <div id="facts-container"></div>
+    <h1>Olympic Fun Facts Generator</h1>
+    <button id="fact-button">Get a Fun Fact!</button>
+    <div id="fact-container" class="fact"></div>
 
     <script>
         const facts = [
@@ -47,13 +58,12 @@
             "The host city for the Olympics is chosen seven years in advance."
         ];
 
-        const factsContainer = document.getElementById('facts-container');
+        const factButton = document.getElementById('fact-button');
+        const factContainer = document.getElementById('fact-container');
 
-        facts.forEach(fact => {
-            const factDiv = document.createElement('div');
-            factDiv.className = 'fact';
-            factDiv.textContent = fact;
-            factsContainer.appendChild(factDiv);
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factContainer.textContent = facts[randomIndex];
         });
     </script>
 
